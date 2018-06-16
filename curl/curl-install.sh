@@ -8,3 +8,6 @@ curl https://npmjs.org/install.sh | sh
 
 # Install nvm
 curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+
+# Install learn typing terminal
+pip install wpm-1.51.2
