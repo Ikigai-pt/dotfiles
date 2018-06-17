@@ -7,12 +7,19 @@
 ### homebrew!
 
 # (if your machine has /usr/local locked down (like google's), you can do this to place everything in ~/.homebrew
-mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
-export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
+echo "Setting up your mac now ..!!"
+
+echo "Installing homebrew"
+# Install HomeBrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# mkdir $HOME/.homebrew && curl -L https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C $HOME/.homebrew
+# export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 
 # install all the things
-./brew.sh
-./brew-cask.sh
+./brew/brew.sh
+./brew/brew-cask.sh
+./curl/curl-install.sh
+
 
 ### end of homebrew
 
@@ -69,11 +76,11 @@ sudo easy_install Pygments
 
 
 # change to bash 4 (installed by homebrew)
-BASHPATH=$(brew --prefix)/bin/bash
+# BASHPATH=$(brew --prefix)/bin/bash
 #sudo echo $BASHPATH >> /etc/shells
-sudo bash -c 'echo $(brew --prefix)/bin/bash >> /etc/shells'
-chsh -s $BASHPATH # will set for current user only.
-echo $BASH_VERSION # should be 4.x not the old 3.2.X
+# sudo bash -c 'echo $(brew --prefix)/bin/bash >> /etc/shells'
+# chsh -s $BASHPATH # will set for current user only.
+# echo $BASH_VERSION # should be 4.x not the old 3.2.X
 # Later, confirm iterm settings aren't conflicting.
 
 
@@ -82,4 +89,4 @@ echo $BASH_VERSION # should be 4.x not the old 3.2.X
 
 
 # setting up the sublime symlink
-ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+# ln -sf "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl
