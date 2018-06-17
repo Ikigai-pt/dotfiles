@@ -1,0 +1,14 @@
+windows:
+  - name: loanMod-Test
+    root: /Users/pthirunavukkarasu/ProsperCode2017/svc-loanmod-programs/integration
+    layout: main-vertical
+    panes:
+      - commands:
+        - cd dryrun
+      - commands:
+        - cd mockService/gdsService && npm install && npm run gds
+      - commands:
+        - cd mockService/investorPrefService && npm install && npm run investorPref
+      - commands:
+        - cd mockService/spectrumService && npm install && npm run spectrum
+
