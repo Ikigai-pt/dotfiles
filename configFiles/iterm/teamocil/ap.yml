@@ -1,0 +1,12 @@
+windows:
+  - name: AgentPortal
+    root: /Users/pthirunavukkarasu/ProsperCode2017/web-hub-agentportal
+    layout: main-vertical
+    panes:
+      - commands:
+        - nvim
+      - commands:
+        - git checkout master && git pull && gco `git for-each-ref --count=2 --sort=-committerdate refs/heads/ --format='%(refname:short)' | grep -v master| head -n1 ` && yarn start
+      - commands:
+        - open -a "Google Chrome" http://www.localhost:3001/agentportal && ssh root@np171.c1.dev
+

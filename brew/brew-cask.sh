@@ -3,6 +3,7 @@ echo "Installing brew cask softwares"
 ###############################################################################
 #  Editors & Tools                                                            #
 ###############################################################################
+brew cask install iterm2
 
 # Install apptivate - tool to lauch apps using keyboard shortcuts
 brew cask install apptivate

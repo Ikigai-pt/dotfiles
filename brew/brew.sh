@@ -3,6 +3,7 @@ echo "Installing brew softwares"
 ###############################################################################
 #  Terminal & Editors                                                         #
 ###############################################################################
+brew install git
 
 brew install bash
 # shell history
@@ -24,6 +25,8 @@ brew install fish
 brew install findutils
 # ACK grep like util
 brew install ack
+# install itermocli
+brew install TomAnthony/brews/itermocil
 
 ###############################################################################
 #  Enviornment & Infro                                                        #
