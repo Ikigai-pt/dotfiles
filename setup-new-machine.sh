@@ -23,10 +23,11 @@ echo "Installing homebrew"
 # export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 
 # install all the things
-./brew/brew.sh
-./brew/brew-cask.sh
-./curl/curl-install.sh
+./brew/install.sh
+./brew/cask/install.sh
+./curl/install.sh
 ./npm/install.sh
+./sdkman/install.sh
 
 ### end of homebrew
 
@@ -40,13 +41,13 @@ mkdir -p ~/.config
 mkdir -p ~/.config/iterm
 
 ### copy dot files
-cp ./dot/ ~/
+cp ./configFiles/dot/* ~/
 
 ### copy nvim config files
-cp -r ./nvim ~/.config/nvim
-cp -r ./iterm ~/.config/iterm
+cp -r ./configFiles/nvim/* ~/.config/nvim
+cp -r ./configFiles/iterm/* ~/.config/iterm
 
-
+neovim +PlugInstall
 
 ### install of common things
 ###

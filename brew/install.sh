@@ -3,6 +3,8 @@ echo "Installing brew softwares"
 ###############################################################################
 #  Terminal & Editors                                                         #
 ###############################################################################
+brew update
+
 brew install git
 
 brew install bash
@@ -27,6 +29,8 @@ brew install findutils
 brew install ack
 # install itermocli
 brew install TomAnthony/brews/itermocil
+# Remote desktop
+brew install rdesktop
 
 ###############################################################################
 #  Enviornment & Infro                                                        #
@@ -58,6 +62,9 @@ brew install node
 brew install yarn
 # Install python
 brew install python3
+
+pip3 install virtualenv
+pip3 install virtualenvwrapper
 
 # DB
 brew install mysql

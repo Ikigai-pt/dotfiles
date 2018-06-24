@@ -1,4 +1,58 @@
 
+#figlet -f poison -c "pthiruna"
+export ANT_HOME=/usr/local/opt/ant
+export PYENV_ROOT=/usr/local/bin/pyenv
+export MAVEN_HOME=/usr/local/opt/maven
+export GRADLE_HOME=/usr/local/opt/gradle
+export GRADLE_USER_HOME=~/.gradle
+#export ANDROID_HOME=/usr/local/opt/android-sdk
+export ANDROID_HOME=/Users/pthirunavukkarasu/Library/Android/sdk
+export ANDROID_SDK_ROOT=/Users/pthirunavukkarasu/Library/Android/sdk
+export ANDROID_AVD_HOME=/Users/pthirunavukkarasu/.android/avd
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home
+export SDKMAN_DIR=/Users/pthirunavukkarasu/Softwares/sdkman
+#export PATH=/Users/pthirunavukkarasu/anaconda3/bin/python:$PATH
+#export PATH=$HOME/.jenv/bin:$PATH
+#export PATH=$HOME/usr/local/bin/pyenv:$PATH
+export PATH=$ANT_HOME/bin:$PATH
+export PATH=$MAVEN_HOME/bin:$PATH
+export PATH=$GRADLE_HOME/bin:$PATH
+export PATH=$ANDROID_HOME/bin:$PATH
+export PATH=$JAVA_HOME/bin:$PATH
+#export PATH="$HOME/.jenv/bin:$PATH"
+#eval "$(jenv init -)"
+#Alias
+alias  vim=nvim
+alias code=code-insiders
+alias chrome="/Applications/Google\\ \\Chrome.app/Contents/MacOS/Google\\ \\Chrome"
+alias clx="mssql -s d40win01.p2pcredit.local -u api_user -p Password23 -d collectionStrategy -e"
+alias lm="itermocil lm"
+# added by Anaconda3 5.0.0 installer
+source /usr/local/opt/nvm/nvm.sh
+source "/Users/pthirunavukkarasu/Softwares/sdkman/bin/sdkman-init.sh"
+#export PATH="/Users/pthirunavukkarasu/anaconda3/bin:$PATH"
+# Git alias
+alias gs='git status'
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff'
+alias gau='git add --update'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gcot='git checkout -t'
+alias gcotb='git checkout --track -b'
+alias glog='git log --graph --oneline'
+alias gll='git log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat'
+alias gld='git log --pretty=format:"%C(yellow)%h\\ %C(green)%ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+--graph'
+alias gls='git log --pretty=format:"%C(green)%h\\ %C(yellow)[%ad]%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+--date=relative'
+
+
 # Load our dotfiles like ~/.bash_prompt, etc…
 #   ~/.extra can be used for settings you don’t want to commit,
 #   Use it to configure your PATH, thus it being first in line.
@@ -80,6 +134,8 @@ export NVM_DIR="$HOME/.nvm"
 zpath="$(brew --prefix)/etc/profile.d/z.sh"
 [ -s $zpath ] && source $zpath
 
+# init z https://github.com/rupa/z
+# . ~/z/z.sh
 
 ##
 ## Completion…

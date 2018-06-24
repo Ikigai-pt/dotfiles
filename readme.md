@@ -1,3 +1,6 @@
+## Manual install
+- Clipy
+
 ### Setup multiple Git hub accounts:
  [core]
   repositoryformatversion = 0
