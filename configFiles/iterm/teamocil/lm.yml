@@ -1,0 +1,12 @@
+windows:
+  - name: loan Modification
+    root: /Users/pthirunavukkarasu/ProsperCode2017/svc-loanmod-programs
+    layout: main-vertical
+    panes:
+      - commands:
+        - git checkout develop && git pull && gradle clean build -x test && java -jar loanmod-program-service/build/libs/svc-loanmod-programs-1-SNAPSHOT.jar
+      - commands:
+        - ssh root@np171.c1.dev
+      - commands:
+        - mssql -s d40win01.p2pcredit.local -u api_user -p Password23 -d loanmodprograms -e
+

@@ -1,0 +1,12 @@
+windows:
+  - name: 3x
+    root: /Users/pthirunavukkarasu/ProsperCode2017
+    layout: main-vertical
+    panes:
+      - commands:
+        - cd /Users/pthirunavukkarasu/ProsperCode2017/web-hub-agentportal
+        - git pull
+      - commands:
+        - ssh root@np171.c1.dev
+      - commands:
+        - mssql -s d40win01.p2pcredit.local -u api_user -p Password23 -d collectionstrategy -e

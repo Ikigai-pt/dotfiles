@@ -4,6 +4,13 @@
 
 
 ##############################################################################################################
+
+# Ask for the administrator password upfront
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `installation` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
 ### homebrew!
 
 # (if your machine has /usr/local locked down (like google's), you can do this to place everything in ~/.homebrew
@@ -16,10 +23,11 @@ echo "Installing homebrew"
 # export PATH=$HOME/.homebrew/bin:$HOME/.homebrew/sbin:$PATH
 
 # install all the things
-./brew/brew.sh
-./brew/brew-cask.sh
-./curl/curl-install.sh
-
+./brew/install.sh
+./brew/cask/install.sh
+./curl/install.sh
+./npm/install.sh
+./sdkman/install.sh
 
 ### end of homebrew
 
@@ -28,40 +36,38 @@ echo "Installing homebrew"
 ##POST INSTALL
 
 ##############################################################################################################
+### Make .config directory at user root path
+mkdir -p ~/.config
+mkdir -p ~/.config/iterm
+
+### copy dot files
+cp ./configFiles/dot/* ~/
+
+### copy nvim config files
+cp -r ./configFiles/nvim/* ~/.config/nvim
+cp -r ./configFiles/iterm/* ~/.config/iterm
+
+neovim +PlugInstall
+
 ### install of common things
 ###
 
 # github.com/jamiew/git-friendly
 # the `push` command which copies the github compare URL to my clipboard is heaven
-bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
-
-
-# Type `git open` to open the GitHub page or website for a repository.
-npm install -g git-open
-
-# fancy listing of recent branches
-npm install -g git-recent
-
-# sexy git diffs
-npm install -g diff-so-fancy
-
-# trash as the safe `rm` alternative
-npm install --global trash-cli
+# bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
 
 # install better nanorc config
 # https://github.com/scopatz/nanorc
-curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
+# curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
 
 # github.com/rupa/z   - oh how i love you
-git clone https://github.com/rupa/z.git ~/code/z
+# git clone https://github.com/rupa/z.git ~/code/z
 # consider reusing your current .z file if possible. it's painful to rebuild :)
 # z is hooked up in .bash_profile
 
-
 # github.com/thebitguru/play-button-itunes-patch
 # disable itunes opening on media keys
-git clone https://github.com/thebitguru/play-button-itunes-patch ~/code/play-button-itunes-patch
-
+# git clone https://github.com/thebitguru/play-button-itunes-patch ~/code/play-button-itunes-patch
 
 # my magic photobooth symlink -> dropbox. I love it.
 # 	 + first move Photo Booth folder out of Pictures
@@ -72,7 +78,7 @@ git clone https://github.com/thebitguru/play-button-itunes-patch ~/code/play-but
 
 
 # for the c alias (syntax highlighted cat)
-sudo easy_install Pygments
+# sudo easy_install Pygments
 
 
 # change to bash 4 (installed by homebrew)

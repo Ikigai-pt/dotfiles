@@ -12,4 +12,4 @@ curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
 # Install learn typing terminal
 echo "Installing wpm"
-pip install wpm-1.51.2
+pip install wpm=1.51.2
