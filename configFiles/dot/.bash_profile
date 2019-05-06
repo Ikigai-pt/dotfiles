@@ -25,7 +25,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 alias  vim=nvim
 alias code=code-insiders
 alias chrome="/Applications/Google\\ \\Chrome.app/Contents/MacOS/Google\\ \\Chrome"
-alias clx="mssql -s d40win01.p2pcredit.local -u api_user -p Password23 -d collectionStrategy -e"
 alias lm="itermocil lm"
 # added by Anaconda3 5.0.0 installer
 source /usr/local/opt/nvm/nvm.sh
